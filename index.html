@@ -37,7 +37,6 @@
       *{
       margin: 0;
       padding: 0;
-      font-family: sans-serif;
       }
 
       .body{
@@ -47,16 +46,14 @@
       .button{
         width: 50;
         height: 50;
-        font-size: 25px;
+        font-size: 25;
         margin: 2px;
         cursor: pointer;
         background: #607d8b;
         border: none;
         color: white;
-        transition: 0.5s;
         outline: none;
       }
-
       .button:hover{
         background: #5f6f7f;
       }
@@ -72,45 +69,51 @@
         margin: 2px 4px;
       }
 
-      .outer{
+      .main{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
       }
+
+      .bg{
+        background: #328594;
+        height: 80%;
+      }
     </style>
   </head>
+  <h2 style="color:red;"><center>USE THIS CALC AND GO TO HARVARD</center></h2>
   <body>
-    <div class="outer">
+    <div class="main bg">
       <input id="answer-view" readonly>
       <table>
         <tr>
-          <td><button onclick="clean()">C</button></td>
-          <td><button onclick="back()"><</button></td>
-          <td><button onclick="insert('/')">/</button></td>
-          <td><button onclick="insert('*')">x</button></td>
+          <td><input class="button" type="button" value="C" onclick="clean()"></td>
+          <td><input class="button" type="button" value="<" onclick="back()"></td>
+          <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+          <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
         </tr>
         <tr>
-          <td><button onclick="insert('7')">7</button></td>
-          <td><button onclick="insert('8')" onclick="">8</button></td>
-          <td><button onclick="insert('9')">9</button></td>
-          <td><button onclick="insert('-')">-</button></td>
+          <td><input class="button" type="button" value="7" onclick="insert('7')"></td>
+          <td><input class="button" type="button" value="8" onclick="insert('8')" onclick=""></td>
+          <td><input class="button" type="button" value="9" onclick="insert('9')"></button></td>
+          <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
         </tr>
         <tr>
-          <td><button onclick="insert('4')">4</button></td>
-          <td><button onclick="insert('5')">5</button></td>
-          <td><button onclick="insert('6')">6</button></td>
-          <td><button onclick="insert('+')">+</button></td>
+          <td><input class="button" type="button" value="4" onclick="insert('4')"></td>
+          <td><input class="button" type="button" value="5" onclick="insert('5')"></td>
+          <td><input class="button" type="button" value="6" onclick="insert('6')"></td>
+          <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
         </tr>
         <tr>
-          <td><button onclick="insert('1')">1</button></td>
-          <td><button onclick="insert('2')">2</button></td>
-          <td><button onclick="insert('3')">3</button></td>
-          <td rowspan=5><button onclick="equal()" style="height:106;">=</button></td>
+          <td><input class="button" type="button" value="1" onclick="insert('1')"></td>
+          <td><input class="button" type="button" value="2" onclick="insert('2')"></td>
+          <td><input class="button" type="button" value="3" onclick="insert('3')"></td>
+          <td rowspan=5><input class="button" type="button" value="=" onclick="equal()" style="height:106;"></td>
         </tr>
         <tr>
-          <td colspan=2><button onclick="insert('0')" style="width:106;">0</button></td>
-          <td><button onclick="insert('.')">.</button></td>
+          <td colspan=2><input class="button" type="button" value="0" onclick="insert('0')" style="width:106;"></td>
+          <td><input class="button" type="button" value="." onclick="insert('.')"></td>
         </tr>
       </table>
     </div>
